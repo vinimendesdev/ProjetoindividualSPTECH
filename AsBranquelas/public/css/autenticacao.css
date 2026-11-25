@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --tamanho-header: 80px;
+    --primary-brand-color: #ED145B;
+    --secondary-brand-color: #0762C8;
+}
+
+.pagina-auth {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at center, #F8BBD0 0%, #E91E63 70%);
+    background-attachment: fixed;
+    color: #263238;
+}
+
+.pagina-auth * {
+    box-sizing: border-box;
+}
+
+/* Header transparente igual à Home e ao Quiz */
+.pagina-auth .header {
+    height: var(--tamanho-header);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(160%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pagina-auth .header .container {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagina-auth .header h1 {
+    margin: 0;
+}
+
+.pagina-auth .titulo {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+}
+
+.pagina-auth .navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #e3b062;
+}
+
+.pagina-auth .navbar a {
+    text-decoration: none;
+    color: #F5F9FF;
+}
+
+.pagina-auth .agora {
+    font-weight: 800;
+}
+
+/* Área central do formulário */
+.pagina-auth .login {
+    flex: 1;
+    background: transparent;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 44px 5vw;
+}
+
+.pagina-auth .login .container {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagina-auth .card {
+    width: 100%;
+    background-color: #F5F9FF;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-top: 5px solid var(--secondary-brand-color);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    color: #263238;
+}
+
+.pagina-auth .card h2 {
+    margin: 0 0 6px;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #263238;
+    text-align: center;
+}
+
+.pagina-auth .card-subtitulo {
+    margin: 0 0 22px;
+    font-size: 0.95rem;
+    color: #546e7a;
+    text-align: center;
+}
+
+.pagina-auth .formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.pagina-auth .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+}
+
+.pagina-auth .campo span {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #263238;
+}
+
+.pagina-auth .campo input {
+    width: 100%;
+    margin: 0;
+    padding: 11px 14px;
+    background-color: #ffffff;
+    border: 2px solid #cfd8dc;
+    border-radius: 8px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.98rem;
+    color: #263238;
+    text-align: left;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagina-auth .campo input::placeholder {
+    color: #90a4ae;
+}
+
+.pagina-auth .campo input:focus {
+    border-color: var(--secondary-brand-color);
+    box-shadow: 0 0 0 3px rgba(7, 98, 200, 0.14);
+}
+
+.pagina-auth .botao {
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    padding: 12px 18px;
+    background-color: var(--primary-brand-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.pagina-auth .botao:hover {
+    background-color: #c2185b;
+}
+
+.pagina-auth .auth-link {
+    margin: 18px 0 0;
+    text-align: center;
+    font-size: 0.93rem;
+    color: #546e7a;
+}
+
+.pagina-auth .auth-link a {
+    color: var(--secondary-brand-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.pagina-auth .auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Loading e mensagens de erro */
+.pagina-auth .loading-div {
+    width: 44px;
+    margin: 14px auto 0;
+    display: none;
+    justify-content: center;
+}
+
+.pagina-auth .loading-div img {
+    width: 44px;
+    height: 44px;
+}
+
+.pagina-auth #div_erros_login {
+    display: none;
+    margin-top: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: #f0c1c6;
+    border: 1px solid #dc3545;
+    color: #990c19;
+    font-size: 0.92rem;
+    font-weight: 600;
+    justify-content: center;
+    text-align: center;
+}
+
+.pagina-auth .alerta_erro {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.pagina-auth .card_erro {
+    display: none;
+    position: static;
+    width: 100%;
+    margin: 0;
+    background-color: #ffffff;
+    color: #263238;
+    border-radius: 8px;
+    border: 2px solid var(--primary-brand-color);
+    border-left: 6px solid var(--primary-brand-color);
+    padding: 12px 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+}
+
+.pagina-auth .card_erro #mensagem_erro {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #263238;
+}
+
+/* Rodapé igual ao da Home */
+.pagina-auth .footer {
+    background-color: #263238;
+    height: auto;
+    padding: 24px 0;
+    border-top: 3px solid #E91E63;
+}
+
+.pagina-auth .footer-conteudo {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.pagina-auth .footer-logo {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.pagina-auth .footer-info p {
+    margin: 0;
+    color: #cfd8dc;
+    font-size: 0.9rem;
+}
+
+.pagina-auth .footer-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.pagina-auth .footer-menu a {
+    color: #F5F9FF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.pagina-auth .footer-menu a:hover {
+    color: #F8BBD0;
+}
+
+@media (max-width: 600px) {
+    .pagina-auth .header .container {
+        width: 92%;
+    }
+
+    .pagina-auth .navbar {
+        width: auto;
+        gap: 12px;
+    }
+
+    .pagina-auth .card {
+        padding: 24px 20px;
+    }
+}
