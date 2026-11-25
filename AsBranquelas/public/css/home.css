@@ -1,316 +1,182 @@
 /* ------------------------------------------------------------
    ESTILOS DA PÁGINA INICIAL (home.css)
+   Alinhado com a paleta de dvd.css (#F5F9FF, #263238, #E91E63, #0762C8)
 ------------------------------------------------------------ */
 
-.pagina-dvd .header {
-    background: rgba(26, 11, 20, 0.78);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-}
-
 .pagina-dvd .conteudo {
-    max-width: 1180px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 10vh 5vw 12vh;
+    padding: 10vh 5vw 10vh;
     display: flex;
     flex-direction: column;
-    gap: 72px;
+    gap: 56px;
 }
 
-.tag-secao {
-    display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #ED145B;
-    background: rgba(237, 20, 91, 0.1);
-    padding: 5px 12px;
-    border-radius: 999px;
-    margin-bottom: 10px;
-}
-
-.cabecalho-secao {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto 32px;
-}
-
-.cabecalho-secao h2,
-.sobreprojeto h2,
-.contexto h2 {
-    font-size: 2rem;
-    color: #1a0b14;
+.pagina-dvd h2 {
+    font-size: 1.85rem;
+    color: #263238;
     margin: 0 0 12px;
 }
 
-.cabecalho-secao p,
-.sobreprojeto p,
-.contexto p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #374151;
+.pagina-dvd p {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: #37474f;
 }
 
 /* ------------------------------------------------------------
    MUSIC PLAYER (A THOUSAND MILES)
 ------------------------------------------------------------ */
-.secao-player {
-    width: 100%;
-}
-
-.player-card {
-    background: linear-gradient(135deg, #1f0c18 0%, #381229 100%);
-    color: #f8fafc;
-    border-radius: 20px;
-    padding: 28px 32px;
+.player-box {
+    background-color: #ffffff;
+    border: 2px solid #F8BBD0;
+    border-left: 6px solid #E91E63;
+    border-radius: 10px;
+    padding: 22px 26px;
     display: flex;
-    align-items: center;
-    gap: 28px;
-    box-shadow: 0 18px 40px rgba(26, 11, 20, 0.22);
-    border: 1px solid rgba(255, 102, 179, 0.35);
+    flex-direction: column;
+    gap: 16px;
 }
 
-.player-disco {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #ff4da6 0%, #140910 68%);
-    border: 3px solid #f5c542;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 0 24px rgba(255, 77, 166, 0.45);
+.player-texto h3 {
+    margin: 0 0 4px;
+    font-size: 1.25rem;
+    color: #263238;
 }
 
-.player-disco.girando {
-    animation: girarDisco 5s linear infinite;
-}
-
-@keyframes girarDisco {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-
-.disco-miolo {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #1a0b14;
-    color: #f5c542;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.player-info {
-    flex: 1;
-}
-
-.player-badge {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #f5c542;
-    font-weight: 700;
-}
-
-.player-info h3 {
-    margin: 4px 0;
-    font-size: 1.5rem;
-    color: #fff;
-}
-
-.player-info p {
-    margin: 0 0 16px;
+.player-texto p {
+    margin: 0;
     font-size: 0.92rem;
-    color: #f8b4d9;
+    color: #607d8b;
 }
 
 .player-controles {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 12px;
 }
 
-.btn-play {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+.btn-player {
+    background-color: #E91E63;
+    color: #ffffff;
     border: none;
-    background: #ff4da6;
-    color: #140910;
-    font-size: 1.15rem;
-    font-weight: 800;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: transform 0.2s, background 0.2s;
-}
-
-.btn-play:hover {
-    background: #ff80bf;
-    transform: scale(1.06);
-}
-
-.player-progresso-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-#barraProgresso,
-#controleVolume {
-    accent-color: #ff4da6;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
 }
 
-#barraProgresso {
-    width: 100%;
-}
-
-.player-tempos {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.78rem;
-    color: #cbd5e1;
-}
-
-.player-volume {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.btn-player:hover {
+    background-color: #c2185b;
 }
 
 .btn-mute {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1.1rem;
+    background-color: #eceff1;
+    color: #263238;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tempo-player {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #455a64;
+    min-width: 36px;
+    text-align: center;
+}
+
+#barraProgresso {
+    flex: 1;
+    accent-color: #E91E63;
     cursor: pointer;
 }
 
 #controleVolume {
-    width: 80px;
+    width: 85px;
+    accent-color: #0762C8;
+    cursor: pointer;
 }
 
 /* ------------------------------------------------------------
-   CARDS: AGENTES VS. DISFARCES
+   AGENTES VS. DISFARCES
 ------------------------------------------------------------ */
-.grid-agentes {
+.subtitulo-secao {
+    margin: 0 0 22px;
+    color: #546e7a;
+}
+
+.grid-personagens {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
 }
 
 .card-personagem {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 26px;
-    border: 1px solid #f3d1e2;
-    box-shadow: 0 8px 24px rgba(26, 11, 20, 0.06);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #ffffff;
+    border: 1px solid #dce4ec;
+    border-radius: 10px;
+    padding: 22px;
 }
 
-.card-personagem:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(237, 20, 91, 0.14);
+.card-agente {
+    border-top: 4px solid #0762C8;
 }
 
-.card-topo-duplo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 14px;
-}
-
-.badge-fbi,
-.badge-socialite,
-.badge-cult,
-.badge-rival {
-    font-size: 0.75rem;
-    font-weight: 800;
-    padding: 4px 10px;
-    border-radius: 6px;
-    text-transform: uppercase;
-}
-
-.badge-fbi {
-    background: #1e293b;
-    color: #f8fafc;
-}
-
-.badge-socialite {
-    background: #fce7f3;
-    color: #be185d;
-}
-
-.badge-cult {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-.badge-rival {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-.seta-transformacao {
-    font-weight: 800;
-    color: #ED145B;
+.card-destaque {
+    border-top: 4px solid #E91E63;
 }
 
 .card-personagem h3 {
-    margin: 0 0 6px;
-    font-size: 1.3rem;
-    color: #1a0b14;
-}
-
-.card-personagem h3 small {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #ED145B;
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+    color: #263238;
 }
 
 .card-personagem .ator {
-    margin: 0 0 12px;
-    font-size: 0.85rem;
+    display: block;
+    font-size: 0.88rem;
     font-weight: 700;
-    color: #64748b;
+    color: #E91E63;
+    margin-bottom: 10px;
 }
 
-.card-personagem .descricao {
+.card-personagem p {
     margin: 0;
     font-size: 0.96rem;
-    line-height: 1.6;
-    color: #374151;
 }
 
 /* ------------------------------------------------------------
-   FICHA TÉCNICA E CURIOSIDADES DE BASTIDORES
+   FICHA TÉCNICA E CURIOSIDADES
 ------------------------------------------------------------ */
-.grid-ficha-curiosidades {
+.grid-ficha {
     display: grid;
-    grid-template-columns: 1fr 1.35fr;
-    gap: 26px;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 24px;
     align-items: start;
 }
 
-.card-ficha {
-    background: #1a0b14;
-    color: #f8fafc;
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: 0 12px 28px rgba(26, 11, 20, 0.18);
+.box-ficha,
+.box-curiosidades {
+    background-color: #ffffff;
+    border: 1px solid #dce4ec;
+    border-radius: 10px;
+    padding: 24px;
 }
 
-.card-ficha h3 {
-    margin: 0 0 18px;
-    font-size: 1.3rem;
-    color: #ff66b3;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-    padding-bottom: 12px;
+.box-ficha h3,
+.box-curiosidades h3 {
+    margin: 0 0 16px;
+    font-size: 1.2rem;
+    color: #263238;
+    border-bottom: 2px solid #F8BBD0;
+    padding-bottom: 8px;
 }
 
 .lista-ficha {
@@ -319,213 +185,181 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .lista-ficha li {
     display: flex;
     justify-content: space-between;
-    gap: 12px;
-    font-size: 0.94rem;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+    font-size: 0.95rem;
     padding-bottom: 8px;
+    border-bottom: 1px solid #eceff1;
 }
 
-.lista-ficha li span {
-    color: #cbd5e1;
+.lista-ficha li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.lista-ficha li strong {
-    color: #f5c542;
-    text-align: right;
+.lista-ficha span {
+    color: #546e7a;
 }
 
-.coluna-curiosidades {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.lista-ficha strong {
+    color: #263238;
 }
 
-.card-curiosidade {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 20px 22px;
-    border: 1px solid #f3d1e2;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    box-shadow: 0 6px 18px rgba(26, 11, 20, 0.05);
+.item-curiosidade {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #eceff1;
 }
 
-.num-curiosidade {
-    background: #ED145B;
-    color: #fff;
-    font-weight: 800;
-    font-size: 0.9rem;
-    padding: 6px 10px;
-    border-radius: 8px;
-    flex-shrink: 0;
+.item-curiosidade:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-.card-curiosidade h4 {
-    margin: 0 0 6px;
-    font-size: 1.05rem;
-    color: #1a0b14;
+.item-curiosidade h4 {
+    margin: 0 0 4px;
+    font-size: 1.02rem;
+    color: #0762C8;
 }
 
-.card-curiosidade p {
+.item-curiosidade p {
     margin: 0;
     font-size: 0.94rem;
-    line-height: 1.55;
-    color: #4b5563;
 }
 
 /* ------------------------------------------------------------
-   POR QUE AS BRANQUELAS
+   PORQUE AS BRANQUELAS
 ------------------------------------------------------------ */
 .contexto {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 36px 40px;
-    border-left: 6px solid #ED145B;
-    box-shadow: 0 8px 24px rgba(26, 11, 20, 0.06);
+    background-color: #ffffff;
+    border: 1px solid #dce4ec;
+    border-left: 6px solid #0762C8;
+    border-radius: 10px;
+    padding: 28px 32px;
+}
+
+.contexto p {
+    margin: 0;
 }
 
 /* ------------------------------------------------------------
-   CHAMADA PARA A AÇÃO (CTA)
+   CHAMADA PARA A AÇÃO
 ------------------------------------------------------------ */
 .secao-cta {
-    background: radial-gradient(circle at top right, #ff4da6 0%, #9d174d 55%, #1a0b14 100%);
-    border-radius: 22px;
-    padding: 46px 40px;
+    background: radial-gradient(circle at center, #F8BBD0 0%, #E91E63 85%);
+    border-radius: 12px;
+    padding: 36px 28px;
     text-align: center;
     color: #ffffff;
-    box-shadow: 0 18px 38px rgba(157, 23, 77, 0.28);
-}
-
-.cta-conteudo {
-    max-width: 680px;
-    margin: 0 auto;
 }
 
 .secao-cta h2 {
-    margin: 0 0 12px;
-    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 8px;
 }
 
 .secao-cta p {
-    margin: 0 0 28px;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #fce7f3;
+    color: #fff5f8;
+    margin: 0 0 22px;
 }
 
-.cta-botoes {
+.cta-acoes {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
-.btn-cta-primario,
+.btn-cta,
 .btn-cta-secundario {
     text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-weight: 800;
-    font-size: 1rem;
-    transition: transform 0.2s, background 0.2s;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.98rem;
 }
 
-.btn-cta-primario {
-    background: #f5c542;
-    color: #1a0b14;
+.btn-cta {
+    background-color: #ffffff;
+    color: #E91E63;
 }
 
-.btn-cta-primario:hover {
-    background: #fde047;
-    transform: translateY(-2px);
+.btn-cta:hover {
+    background-color: #F5F9FF;
 }
 
 .btn-cta-secundario {
-    background: rgba(255, 255, 255, 0.14);
+    background-color: transparent;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    border: 2px solid #ffffff;
 }
 
 .btn-cta-secundario:hover {
-    background: rgba(255, 255, 255, 0.24);
-    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* ------------------------------------------------------------
    RODAPÉ
 ------------------------------------------------------------ */
-.footer-branquelas {
-    background: #1a0b14;
-    color: #e2e8f0;
-    border-top: 3px solid #ED145B;
-    padding: 36px 5vw;
+.pagina-dvd .footer {
+    background-color: #263238;
+    height: auto;
+    padding: 28px 0;
+    border-top: 3px solid #E91E63;
 }
 
-.footer-container {
-    max-width: 1180px;
-    margin: 0 auto;
+.footer-conteudo {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 16px;
 }
 
 .footer-logo {
-    max-width: 170px;
+    max-width: 150px;
     height: auto;
     display: block;
     margin-bottom: 6px;
 }
 
-.footer-marca p,
-.footer-copy {
+.footer-info p {
     margin: 0;
-    font-size: 0.88rem;
-    color: #cbd5e1;
+    color: #cfd8dc;
+    font-size: 0.9rem;
 }
 
-.footer-links {
+.footer-menu {
     list-style: none;
     display: flex;
-    gap: 22px;
+    gap: 20px;
     padding: 0;
     margin: 0;
 }
 
-.footer-links a {
+.footer-menu a {
+    color: #F5F9FF;
     text-decoration: none;
-    color: #f8b4d9;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
 }
 
-.footer-links a:hover {
-    color: #f5c542;
+.footer-menu a:hover {
+    color: #F8BBD0;
 }
 
-@media (max-width: 850px) {
-    .player-card,
-    .player-controles {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-    }
-
-    .player-disco,
-    .btn-play {
-        margin: 0 auto;
-    }
-
-    .grid-agentes,
-    .grid-ficha-curiosidades {
+@media (max-width: 800px) {
+    .grid-personagens,
+    .grid-ficha {
         grid-template-columns: 1fr;
+    }
+
+    .player-controles {
+        flex-wrap: wrap;
     }
 }

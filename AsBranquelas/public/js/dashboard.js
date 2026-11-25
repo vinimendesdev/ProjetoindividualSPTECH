@@ -51,13 +51,13 @@ function carregarGraficoEvolucao(idUsuario) {
                     datasets: [{
                         label: "Acertos",
                         data: valores,
-                        borderColor: "#ff4da6",
-                        backgroundColor: "rgba(255, 77, 166, 0.2)",
-                        borderWidth: 3,
-                        tension: 0.3,
+                        borderColor: "#E91E63",
+                        backgroundColor: "rgba(233, 30, 99, 0.14)",
+                        borderWidth: 2,
+                        tension: 0.25,
                         fill: true,
-                        pointBackgroundColor: "#f5c542",
-                        pointRadius: 5
+                        pointBackgroundColor: "#0762C8",
+                        pointRadius: 4
                     }]
                 },
                 options: {
@@ -66,16 +66,16 @@ function carregarGraficoEvolucao(idUsuario) {
                     scales: {
                         y: {
                             beginAtZero: true,
-                            ticks: { color: "#cbd5e1", stepSize: 1 },
-                            grid: { color: "rgba(255,255,255,0.08)" }
+                            ticks: { color: "#455a64", stepSize: 1 },
+                            grid: { color: "#eceff1" }
                         },
                         x: {
-                            ticks: { color: "#cbd5e1" },
+                            ticks: { color: "#455a64" },
                             grid: { display: false }
                         }
                     },
                     plugins: {
-                        legend: { labels: { color: "#f8fafc" } }
+                        legend: { labels: { color: "#263238" } }
                     }
                 }
             });
@@ -101,9 +101,9 @@ function carregarGraficoDesempenho(idUsuario) {
                     labels: ["Acertos", "Erros"],
                     datasets: [{
                         data: [acertos, erros],
-                        backgroundColor: ["#ff4da6", "#4a1d3a"],
-                        borderColor: ["#ff80bf", "#7a2e5f"],
-                        borderWidth: 2
+                        backgroundColor: ["#0762C8", "#E91E63"],
+                        borderWidth: 2,
+                        borderColor: "#ffffff"
                     }]
                 },
                 options: {
@@ -112,7 +112,7 @@ function carregarGraficoDesempenho(idUsuario) {
                     plugins: {
                         legend: {
                             position: "bottom",
-                            labels: { color: "#f8fafc", padding: 16 }
+                            labels: { color: "#263238", padding: 14 }
                         }
                     }
                 }
@@ -142,10 +142,10 @@ function carregarGraficoQuestoesErradas() {
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: "Quantidade de Erros",
+                        label: "Erros",
                         data: valores,
-                        backgroundColor: "#f5c542",
-                        borderRadius: 6
+                        backgroundColor: "#E91E63",
+                        borderRadius: 4
                     }]
                 },
                 options: {
@@ -155,16 +155,16 @@ function carregarGraficoQuestoesErradas() {
                     scales: {
                         x: {
                             beginAtZero: true,
-                            ticks: { color: "#cbd5e1", stepSize: 1 },
-                            grid: { color: "rgba(255,255,255,0.08)" }
+                            ticks: { color: "#455a64", stepSize: 1 },
+                            grid: { color: "#eceff1" }
                         },
                         y: {
-                            ticks: { color: "#cbd5e1" },
+                            ticks: { color: "#263238" },
                             grid: { display: false }
                         }
                     },
                     plugins: {
-                        legend: { labels: { color: "#f8fafc" } }
+                        legend: { labels: { color: "#263238" } }
                     }
                 }
             });

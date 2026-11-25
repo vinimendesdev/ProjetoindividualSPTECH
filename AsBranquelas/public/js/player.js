@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const tempoTotal = document.getElementById("tempoTotal");
     const controleVolume = document.getElementById("controleVolume");
     const btnMute = document.getElementById("btnMute");
-    const discoPlayer = document.getElementById("discoPlayer");
 
     if (!audio) return;
 
@@ -27,16 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (audio.paused) {
             audio.play()
                 .then(function () {
-                    btnPlayPause.textContent = "⏸";
-                    discoPlayer.classList.add("girando");
+                    btnPlayPause.textContent = "Pausar";
                 })
                 .catch(function (erro) {
                     console.error("Erro ao reproduzir áudio:", erro);
                 });
         } else {
             audio.pause();
-            btnPlayPause.textContent = "▶";
-            discoPlayer.classList.remove("girando");
+            btnPlayPause.textContent = "Tocar";
         }
     });
 
@@ -56,17 +53,16 @@ document.addEventListener("DOMContentLoaded", function () {
     controleVolume.addEventListener("input", function () {
         audio.volume = Number(controleVolume.value);
         audio.muted = audio.volume === 0;
-        btnMute.textContent = audio.muted ? "🔇" : "🔊";
+        btnMute.textContent = audio.muted ? "Mudo" : "Som";
     });
 
     btnMute.addEventListener("click", function () {
         audio.muted = !audio.muted;
-        btnMute.textContent = audio.muted ? "🔇" : "🔊";
+        btnMute.textContent = audio.muted ? "Mudo" : "Som";
     });
 
     audio.addEventListener("ended", function () {
-        btnPlayPause.textContent = "▶";
-        discoPlayer.classList.remove("girando");
+        btnPlayPause.textContent = "Tocar";
         barraProgresso.value = 0;
         tempoAtual.textContent = "0:00";
     });
