@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - As Branquelas</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="icon" href="../assets/icon/favicon2.ico">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/sessao.js"></script>
+</head>
+
+<body onload="validarSessao(); carregarDashboard();">
+    <div class="janela">
+        <!-- Barra lateral fixa (padrão web-data-viz) -->
+        <aside class="header-left">
+            <div class="logo-area">
+                <h1>As Branquelas</h1>
+                <span>Dashboard do Quiz</span>
+            </div>
+
+            <div class="hello">
+                <div class="avatar">AB</div>
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <nav class="menu-nav">
+                <a href="../index.html" class="btn-nav-white">
+                    <span>Inicial</span>
+                </a>
+                <a href="../simulador.html" class="btn-nav-white">
+                    <span>Quiz</span>
+                </a>
+                <a href="./dashboard.html" class="btn-nav active">
+                    <span>Dashboard</span>
+                </a>
+            </nav>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <span>Sair</span>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="dash">
+            <div class="dash-topo">
+                <div>
+                    <h2>Painel de Desempenho do Quiz</h2>
+                    <p>Métricas individuais e análise das questões respondidas</p>
+                </div>
+                <a href="../simulador.html" class="btn-novo-quiz">+ Jogar Novamente</a>
+            </div>
+
+            <!-- 4 Cards de KPIs -->
+            <section class="kpis-container">
+                <div class="kpi-card">
+                    <span class="kpi-titulo">Partidas Jogadas</span>
+                    <strong class="kpi-valor" id="kpi_tentativas">0</strong>
+                    <span class="kpi-sub">Total de tentativas</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-titulo">Recorde Pessoal</span>
+                    <strong class="kpi-valor destaque-rosa" id="kpi_recorde">0 / 0</strong>
+                    <span class="kpi-sub">Maior pontuação</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-titulo">Média de Acertos</span>
+                    <strong class="kpi-valor" id="kpi_media">0.0</strong>
+                    <span class="kpi-sub">Acertos por partida</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-titulo">Aproveitamento</span>
+                    <strong class="kpi-valor destaque-dourado" id="kpi_aproveitamento">0%</strong>
+                    <span class="kpi-sub">Taxa geral de acerto</span>
+                </div>
+            </section>
+
+            <!-- 3 Gráficos Chart.js (Evolução, Acertos vs Erros e Questões Mais Erradas) -->
+            <section class="graficos-grid">
+                <div class="grafico-card">
+                    <h3>Evolução das Suas Pontuações</h3>
+                    <div class="canvas-box">
+                        <canvas id="graficoEvolucao"></canvas>
+                    </div>
+                </div>
+
+                <div class="grafico-card">
+                    <h3>Seus Acertos vs. Erros</h3>
+                    <div class="canvas-box">
+                        <canvas id="graficoDesempenho"></canvas>
+                    </div>
+                </div>
+
+                <div class="grafico-card grafico-largo">
+                    <h3>Questões Mais Erradas (Geral)</h3>
+                    <div class="canvas-box">
+                        <canvas id="graficoQuestoesErradas"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

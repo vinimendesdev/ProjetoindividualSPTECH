@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>As Branquelas | Página Inicial</title>
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/dvd.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+</head>
+
+<body class="pagina-dvd">
+
+    <!--header inicio-->
+    <div class="header">
+        <div class="container">
+            <h1>
+                <img src="./assets/img/titulo.png" alt="As Branquelas" class="titulo">
+            </h1>
+            <ul class="navbar">
+                <li class="agora">
+                    <a href="#">Inicial</a>
+                </li>
+                <li>
+                    <a href="simulador.html">Quiz</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--header fim-->
+
+    <!-- Trilho de rolagem: abertura da capa 3D do DVD -->
+    <section class="trilho">
+        <div class="palco">
+
+            <div class="caixa">
+                <div class="face frente">
+                    <div class="face lombada">
+                        <div class="face verso"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="dica">role para baixo</p>
+
+        </div>
+    </section>
+
+    <!-- Conteúdo principal -->
+    <main class="conteudo">
+
+        <!-- 1. POR TRÁS DO DISFARCE -->
+        <section class="disfarce">
+            <img src="./assets/img/distintivos.png" alt="Distintivos do FBI" class="img-disfarce">
+
+            <div class="sobreprojeto">
+                <span class="tag-secao">Sobre o Filme</span>
+                <h2>Por trás do Disfarce</h2>
+                <p>
+                    Lançado em 2004 e dirigido por Keenen Ivory Wayans, <strong>As Branquelas</strong> (<em>White Chicks</em>) acompanha os agentes do FBI Kevin e Marcus Copeland. Após uma operação fracassada, os dois irmãos precisam assumir o disfarce das socialites milionárias Brittany e Tiffany Wilson para protegê-las de um plano de sequestro nos Hamptons, mergulhando em um universo de festas, rivalidades e situações completamente fora de controle.
+                </p>
+                <p>
+                    Na época da estreia nos Estados Unidos, o filme teve uma péssima recepção da crítica especializada, acumulando avaliações negativas e indicações ao Framboesa de Ouro. O público, porém, foi na direção oposta e transformou o longa em um fenômeno. No Brasil, esse sucesso atingiu outro patamar: impulsionado por uma dublagem icônica, exibições constantes na TV aberta e pela força das redes sociais, <em>As Branquelas</em> virou um clássico absoluto da cultura pop, eternizado em memes e cenas inesquecíveis que seguem conquistando novas gerações.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. MUSIC PLAYER: A THOUSAND MILES -->
+        <section class="secao-player">
+            <div class="player-card">
+                <div class="player-disco" id="discoPlayer">
+                    <div class="disco-miolo">♫</div>
+                </div>
+
+                <div class="player-info">
+                    <span class="player-badge">Trilha Sonora Icônica • Cena do Carro</span>
+                    <h3>A Thousand Miles</h3>
+                    <p>Vanessa Carlton — Performance de Latrell Spencer (<em>As Branquelas</em>, 2004)</p>
+
+                    <div class="player-controles">
+                        <button type="button" id="btnPlayPause" class="btn-play" aria-label="Tocar ou pausar música">
+                            ▶
+                        </button>
+
+                        <div class="player-progresso-area">
+                            <input type="range" id="barraProgresso" value="0" min="0" max="100" step="0.1">
+                            <div class="player-tempos">
+                                <span id="tempoAtual">0:00</span>
+                                <span id="tempoTotal">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="player-volume">
+                            <button type="button" id="btnMute" class="btn-mute" title="Silenciar">🔊</button>
+                            <input type="range" id="controleVolume" min="0" max="1" step="0.05" value="0.8">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tenta carregar a-thousand-miles.mp3; se ainda não existir na pasta, usa latrellCantando.mp3 -->
+                <audio id="audioThousandMiles" preload="metadata">
+                    <source src="./assets/a-thousand-miles.mp3" type="audio/mpeg">
+                    <source src="./assets/latrellCantando.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </section>
+
+        <!-- 3. CARDS: AGENTES VS. DISFARCES -->
+        <section class="secao-bloco">
+            <div class="cabecalho-secao">
+                <span class="tag-secao">Elenco &amp; Identidades</span>
+                <h2>Agentes vs. Disfarces</h2>
+                <p>De agentes do FBI em risco de demissão às herdeiras mais comentadas dos Hamptons.</p>
+            </div>
+
+            <div class="grid-agentes">
+                <article class="card-personagem">
+                    <div class="card-topo-duplo">
+                        <span class="badge-fbi">Agente FBI</span>
+                        <span class="seta-transformacao">⇄</span>
+                        <span class="badge-socialite">Disfarce</span>
+                    </div>
+                    <h3>Kevin Copeland <br><small>como Brittany Wilson</small></h3>
+                    <p class="ator">Interpretado por Shawn Wayans</p>
+                    <p class="descricao">
+                        O irmão mais racional e estrategista da dupla. Sob a peruca loira de Brittany, precisa improvisar coreografias, leilões beneficentes e encontros desastrosos para manter a cobertura.
+                    </p>
+                </article>
+
+                <article class="card-personagem">
+                    <div class="card-topo-duplo">
+                        <span class="badge-fbi">Agente FBI</span>
+                        <span class="seta-transformacao">⇄</span>
+                        <span class="badge-socialite">Disfarce</span>
+                    </div>
+                    <h3>Marcus Copeland <br><small>como Tiffany Wilson</small></h3>
+                    <p class="ator">Interpretado por Marlon Wayans</p>
+                    <p class="descricao">
+                        Tentando salvar seu casamento enquanto salva o emprego, Marcus encarna Tiffany com intensidade total — atraindo, sem querer, a paixão avassaladora de Latrell Spencer.
+                    </p>
+                </article>
+
+                <article class="card-personagem">
+                    <div class="card-topo-duplo">
+                        <span class="badge-cult">Ícone da Comédia</span>
+                    </div>
+                    <h3>Latrell Spencer <br><small>O Astro do Basquete</small></h3>
+                    <p class="ator">Interpretado por Terry Crews</p>
+                    <p class="descricao">
+                        Exuberante, romântico e completamente encantado por "Tiffany". Protagoniza algumas das cenas mais citadas da história da comédia, incluindo a serenata de <em>A Thousand Miles</em>.
+                    </p>
+                </article>
+
+                <article class="card-personagem">
+                    <div class="card-topo-duplo">
+                        <span class="badge-rival">Rivais</span>
+                    </div>
+                    <h3>Heather &amp; Megan <br><small>As Irmãs Vandergeld</small></h3>
+                    <p class="ator">Jaime King &amp; Brittany Daniel</p>
+                    <p class="descricao">
+                        As maiores adversárias sociais das irmãs Wilson nos Hamptons, obcecadas em humilhar Brittany e Tiffany e roubar a capa da revista <em>Hamptons</em>.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. FICHA TÉCNICA E CURIOSIDADES DE BASTIDORES -->
+        <section class="secao-bloco">
+            <div class="cabecalho-secao">
+                <span class="tag-secao">Bastidores &amp; Números</span>
+                <h2>Ficha Técnica e Curiosidades</h2>
+                <p>Os números e segredos de produção por trás da comédia de 2004.</p>
+            </div>
+
+            <div class="grid-ficha-curiosidades">
+                <!-- Coluna Ficha Técnica -->
+                <div class="card-ficha">
+                    <h3>Ficha Técnica</h3>
+                    <ul class="lista-ficha">
+                        <li><span>Título Original</span><strong>White Chicks</strong></li>
+                        <li><span>Ano de Lançamento</span><strong>2004</strong></li>
+                        <li><span>Direção</span><strong>Keenen Ivory Wayans</strong></li>
+                        <li><span>Roteiro</span><strong>Keenen, Shawn e Marlon Wayans</strong></li>
+                        <li><span>Duração</span><strong>109 minutos</strong></li>
+                        <li><span>Orçamento</span><strong>US$ 37 milhões</strong></li>
+                        <li><span>Bilheteria Mundial</span><strong>+ US$ 113 milhões</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna Curiosidades -->
+                <div class="coluna-curiosidades">
+                    <div class="card-curiosidade">
+                        <span class="num-curiosidade">01</span>
+                        <div>
+                            <h4>7 horas diárias de maquiagem</h4>
+                            <p>Shawn e Marlon Wayans passavam cerca de sete horas por dia na cadeira de maquiagem aplicando próteses de silicone, perucas e lentes de contato antes do início das filmagens.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-curiosidade">
+                        <span class="num-curiosidade">02</span>
+                        <div>
+                            <h4>Batalha de dança improvisada</h4>
+                            <p>A clássica disputa de dança na boate misturou coreografia ensaiada com passos improvisados no set para capturar reações espontâneas do elenco.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-curiosidade">
+                        <span class="num-curiosidade">03</span>
+                        <div>
+                            <h4>A força da dublagem brasileira</h4>
+                            <p>A adaptação dos diálogos para o português brasileiro — com gírias, ritmo cômico e bordões próprios — foi decisiva para transformar o longa em patrimônio da TV e da internet no Brasil.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PORQUE AS BRANQUELAS? -->
+        <section class="contexto">
+            <span class="tag-secao">Motivação do Projeto</span>
+            <h2>Por que As Branquelas?</h2>
+            <p>
+                Mais do que uma comédia besteirol dos anos 2000, <strong>As Branquelas</strong> faz parte da memória afetiva de quem cresceu assistindo ao filme em família ou com amigos e até hoje usa suas falas no dia a dia. Escolher esse universo como tema do projeto une entretenimento, nostalgia e análise de dados: através do quiz interativo e da dashboard, é possível transformar o conhecimento dos fãs sobre o filme em métricas reais de desempenho.
+            </p>
+        </section>
+
+        <!-- 6. CHAMADA PARA A AÇÃO (CTA) -->
+        <section class="secao-cta">
+            <div class="cta-conteudo">
+                <h2>Você sobreviveria a um fim de semana nos Hamptons?</h2>
+                <p>
+                    Coloque sua memória à prova no Quiz oficial de <strong>As Branquelas</strong>, registre suas tentativas e acompanhe sua taxa de acertos e evolução na Dashboard.
+                </p>
+                <div class="cta-botoes">
+                    <a href="simulador.html" class="btn-cta-primario">Jogar o Quiz Agora</a>
+                    <a href="cadastro.html" class="btn-cta-secundario">Criar Conta</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. RODAPÉ -->
+    <footer class="footer-branquelas">
+        <div class="footer-container">
+            <div class="footer-marca">
+                <img src="./assets/img/titulo.png" alt="As Branquelas" class="footer-logo">
+                <p>Projeto Individual • Ciência da Computação — SPTech</p>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="#">Inicial</a></li>
+                <li><a href="simulador.html">Quiz</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+
+            <p class="footer-copy">Desenvolvido por Vinícius Mendes &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="./js/player.js"></script>
+</body>
+
+</html>

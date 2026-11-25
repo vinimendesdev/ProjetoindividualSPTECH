@@ -1,0 +1,257 @@
+/* ------------------------------------------------------------
+   PÁGINA INICIAL (DVD) + HEADER
+   Tudo escopado em .pagina-dvd para não mexer nas outras páginas.
+------------------------------------------------------------ */
+.pagina-dvd {
+    background-color: #F5F9FF	;
+    color: #263238;
+}
+
+.pagina-dvd * {
+    box-sizing: border-box;
+}
+
+/* header fixa no topo, por cima da animação */
+.pagina-dvd .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: transparent;
+    margin-bottom: calc(-1 * var(--tamanho-header));
+
+    background: rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(160%);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.titulo-dvd,
+.dica {
+    margin: 0;
+}
+
+/* ------------------------------------------------------------
+   TAMANHOS
+   A imagem original tem 560px de largura. Ela foi dividida em:
+   verso = 263px | lombada = 33px | frente = 264px | altura = 375px
+   --u é a "unidade" que escala tudo junto (cabe em qualquer tela)
+------------------------------------------------------------ */
+:root {
+    --u: min(0.14vw, 0.155vh);
+
+    --larg-verso: calc(263 * var(--u));
+    --larg-lombada: calc(33 * var(--u));
+    --larg-frente: calc(264 * var(--u));
+    --altura: calc(375 * var(--u));
+
+    --capa: url("../assets/imgs/capa-as-branquelas.png");
+}
+
+/* ------------------------------------------------------------
+   TRILHO + PALCO
+   O trilho cria a distância de rolagem; o palco fica "grudado"
+   na tela enquanto você rola.
+------------------------------------------------------------ */
+.trilho {
+    height: 400vh;
+}
+
+.palco {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding-top: var(--tamanho-header);
+    padding-bottom: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1800px;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #F8BBD0 0%, #E91E63 70%);
+}
+
+/* ------------------------------------------------------------
+   A CAIXA (3D)
+------------------------------------------------------------ */
+.caixa {
+    transform-style: preserve-3d;
+    /* estado inicial: fechada, levemente girada para ver a lombada */
+    transform: translateX(0) rotateX(8deg) rotateY(30deg);
+}
+
+.face {
+    background-image: var(--capa);
+    background-size: calc(560 * var(--u)) calc(560 * var(--u));
+    background-repeat: no-repeat;
+    height: var(--altura);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* FRENTE: parte da imagem que vai de x=296 até o fim */
+.frente {
+    position: relative;
+    width: var(--larg-frente);
+    background-position: calc(-296 * var(--u)) calc(-92 * var(--u));
+}
+
+/* LOMBADA: fica à esquerda da frente e dobra para trás (-90°) */
+.lombada {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: var(--larg-lombada);
+    background-position: calc(-263 * var(--u)) calc(-92 * var(--u));
+    transform-origin: right center;
+    transform: rotateY(-90deg);
+}
+
+/* VERSO: fica à esquerda da lombada e dobra para trás de novo */
+.verso {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: var(--larg-verso);
+    background-position: 0 calc(-92 * var(--u));
+    transform-origin: right center;
+    transform: rotateY(-90deg);
+}
+
+/* ------------------------------------------------------------
+   TEXTOS
+------------------------------------------------------------ */
+.titulo-dvd {
+    position: absolute;
+    bottom: 6vh;
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.dica {
+    position: absolute;
+    bottom: 3vh;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ccc;
+}
+
+.conteudo {
+    padding: 15vh 10vw;
+}
+
+/* ------------------------------------------------------------
+   ANIMAÇÕES COM A ROLAGEM (CSS puro)
+   animation-timeline: scroll() faz a animação andar conforme a
+   barra de rolagem, e não conforme o tempo.
+   animation-range define em que pedaço da rolagem cada uma roda
+   (0 a 300vh = toda a rolagem do trilho).
+------------------------------------------------------------ */
+@keyframes girar-e-centralizar {
+    from {
+        /* desloca para a direita para a capa aberta ficar centralizada */
+        transform: translateX(0) rotateX(8deg) rotateY(30deg);
+    }
+    to {
+        transform: translateX(calc((263 + 33) / 2 * var(--u))) rotateX(0deg) rotateY(0deg);
+    }
+}
+
+@keyframes abrir-dobra {
+    from { transform: rotateY(-90deg); }
+    to   { transform: rotateY(0deg); }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sumir {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@supports (animation-timeline: scroll()) {
+
+    .caixa {
+        animation: girar-e-centralizar linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 270vh;
+    }
+
+    /* primeiro abre a lombada... */
+    .lombada {
+        animation: abrir-dobra linear both;
+        animation-timeline: scroll(root);
+        animation-range: 30vh 150vh;
+    }
+
+    /* ...depois abre o verso */
+    .verso {
+        animation: abrir-dobra linear both;
+        animation-timeline: scroll(root);
+        animation-range: 120vh 240vh;
+    }
+
+    .titulo-dvd {
+        animation: aparecer linear both;
+        animation-timeline: scroll(root);
+        animation-range: 240vh 300vh;
+    }
+
+    .dica {
+        animation: sumir linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 40vh;
+    }
+}
+
+/* Navegador sem suporte: mostra a capa já aberta */
+@supports not (animation-timeline: scroll()) {
+    .caixa {
+        transform: translateX(calc((263 + 33) / 2 * var(--u)));
+    }
+
+    .lombada,
+    .verso {
+        transform: none;
+    }
+
+    .titulo-dvd {
+        opacity: 1;
+    }
+
+    .dica {
+        display: none;
+    }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    .caixa,
+    .lombada,
+    .verso,
+    .titulo-dvd,
+    .dica {
+        animation: none;
+    }
+
+    .caixa {
+        transform: translateX(calc((263 + 33) / 2 * var(--u)));
+    }
+
+    .lombada,
+    .verso {
+        transform: none;
+    }
+
+    .titulo-dvd {
+        opacity: 1;
+    }
+}

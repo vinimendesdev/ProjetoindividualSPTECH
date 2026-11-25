@@ -1,0 +1,7 @@
+Áudio do Music Player (Página Inicial):
+
+O player de "A Thousand Miles" na página inicial tenta carregar primeiro:
+   public/assets/a-thousand-miles.mp3
+
+Enquanto esse arquivo não estiver na pasta, o player usa automaticamente:
+   public/assets/latrellCantando.mp3
