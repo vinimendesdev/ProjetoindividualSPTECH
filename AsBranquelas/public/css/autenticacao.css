@@ -3,7 +3,7 @@
 :root {
     --tamanho-header: 80px;
     --primary-brand-color: #ED145B;
-    --secondary-brand-color: #0762C8;
+
 }
 
 .pagina-auth {
@@ -63,7 +63,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    color: #e3b062;
+    color: #32b9cd;
 }
 
 .pagina-auth .navbar a {
@@ -263,7 +263,7 @@
 
 /* Rodapé igual ao da Home */
 .pagina-auth .footer {
-    background-color: #263238;
+    background-color: #32b9cd;
     height: auto;
     padding: 24px 0;
     border-top: 3px solid #E91E63;

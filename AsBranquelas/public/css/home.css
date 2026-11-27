@@ -125,14 +125,6 @@
     padding: 22px;
 }
 
-.card-agente {
-    border-top: 4px solid #0762C8;
-}
-
-.card-destaque {
-    border-top: 4px solid #E91E63;
-}
-
 .card-personagem h3 {
     margin: 0 0 4px;
     font-size: 1.2rem;
@@ -251,7 +243,7 @@
    CHAMADA PARA A AÇÃO
 ------------------------------------------------------------ */
 .secao-cta {
-    background: radial-gradient(circle at center, #F8BBD0 0%, #E91E63 85%);
+    background: radial-gradient(circle at center, #E91E63 85%);
     border-radius: 12px;
     padding: 36px 28px;
     text-align: center;
@@ -307,7 +299,7 @@
    RODAPÉ
 ------------------------------------------------------------ */
 .pagina-dvd .footer {
-    background-color: #263238;
+    background-color:#E91E63;
     height: auto;
     padding: 28px 0;
     border-top: 3px solid #E91E63;
